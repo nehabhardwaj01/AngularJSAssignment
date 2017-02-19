@@ -1,0 +1,62 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="setCreateLink()" >Create Task</a>
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="setShowLink()" >Show Tasks</a>
+    </div>
+  </div>
+</nav>
+
+<div [hidden]="!createLink" #formdiv>
+<h1>CRUD Application
+</h1>
+  <form class="form form-horizontal" #taskForm>
+
+    <label class="form-label">Date : </label>
+    <input #date required class="form-control"><br>
+
+    <label class="form-label">Title : </label>
+    <input #title required class="form-control"><br>
+
+    <label class="form-label">Description : </label>
+    <textarea #desc required class="form-control"></textarea><br>
+
+    <label class="form-label">Priority : </label>
+    <select class="form-control" #priority>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select><br>
+    <button class="btn btn-success form-control" type="submit"
+            (click)="saveTask(date.value,title.value,desc.value,priority.value)">Submit</button>
+
+  </form>
+</div>
+
+
+<div [hidden]="!showLink" #showDiv>
+  <table>
+    <tr class="btn-info">
+      <td>Serial No.</td>
+      <td>Creation Date</td>
+      <td>Title</td>
+      <td>Description</td>
+      <td>Priority</td>
+      <td>Any Update ?</td>
+    </tr>
+    <tr *ngFor="let task of myTasks">
+      <td class="odd"> {{task.Sno}} </td>
+      <td class="even"> {{task.date}} </td>
+      <td class="odd"> {{task.title}} </td>
+      <td class="even"> {{task.description}} </td>
+      <td class="odd"> {{task.priority}} </td>
+      <td>
+        <button class="btn btn-success" value="edit" (click)="edit()">Edit</button>
+        <button class="btn btn-danger" value="done" (click)="done(myTasks.indexOf(task))">Done</button>
+      </td>
+    </tr>
+
+  </table>
+  </div>

@@ -1,5 +1,32 @@
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 300%;
+}
+
+#formDiv{
+  width: 500px;
+  height: auto;
+}
+#showDiv{
+  width: auto;
+  height:auto;
+}
+
+tr{
+  height: 20px;
+}
+
+td{
+  width: 100px;
+}
+
+.even{
+  width: 200px;
+  background-color: #37ffc4;
+}
+
+.odd{
+  width: 100px;
+  background-color: transparent;
 }
