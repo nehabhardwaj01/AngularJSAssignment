@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import {Intern} from './intern';
 import {AppService} from "./app.service";
 
@@ -8,7 +8,8 @@ import {AppService} from "./app.service";
   templateUrl : './app/app.component.html'
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent{
   
 constructor(private service: AppService) {}
+  
 }
